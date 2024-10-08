@@ -1,0 +1,23 @@
+<div class="col-md-12 mb-4 mt-2">
+    <a routerLink="/create" class="btn btn-success">Create Task</a>
+</div>
+
+<div class="col-md-12">
+    <table class="table table-striped">
+        <thead>
+            <th>Task Name</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let task of tasks | async">
+                <td>{{task.name}}</td>
+                <td>
+                    <a routerLink="/view/{{task.id}}" class="btn btn-primary btn-sm">View</a>
+                    <a routerLink="/edit/{{task.id}}" class="btn btn-primary btn-sm"
+                        class="btn btn-secondary btn-sm">Edit</a>
+                    <a routerLink="/delete/{{task.id}}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
